@@ -2,20 +2,20 @@
 Learning Angular
 
 # Table of Contents
-1. [Angular Setup](#angular-setup)  
-    1.1 [Install Node](#install-node)   
-    1.2 [Install Angular-CLI](#install-angular-cli)     
-    1.3 [Create a new project](#create-a-new-project)   
-    1.4 [Run a project](#run-a-project)
+0. [Angular Basics](#angular-basics)  
+    0.1 [Install Node](#install-node)   
+    0.2 [Install Angular-CLI](#install-angular-cli)     
+    0.3 [Create a new project](#create-a-new-project)   
+    0.4 [Run a project](#run-a-project)
 
 
-# Angular Setup
+# Angular Basics
 
 ## Install Node
 You can install Node.js downloading it from https://nodejs.org/en/ or you can install node using [NVM](http://cjrequena.com/markdowns/docs/cheatsheets/npm-cheatsheet/#install-nvm-node-version-manager)
 
 ## Install Angular CLI 
-Youc can install angular-cli following this guide [Angular-CLI](http://cjrequena.com/markdowns/docs/cheatsheets/angular-cli-cheatsheet/)
+You can install angular-cli following this guide [Angular-CLI](http://cjrequena.com/markdowns/docs/cheatsheets/angular-cli-cheatsheet/)
 
 ## Create a new project
 To create a new project you have to use the following command [ng new](https://angular.io/cli/new)
