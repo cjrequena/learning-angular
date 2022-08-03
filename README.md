@@ -1,6 +1,9 @@
 # learning-angular
 Learning Angular
 
+The sample projects on this repository are implemented following the Youtube course [Complete Angular 13 Course Step by Step](https://www.youtube.com/playlist?list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty) from [procademy](https://www.youtube.com/c/procademyn)
+
+
 # Table of Contents
 0. [Angular Basics](#angular-basics)  
     0.1 [Install Node](#install-node)   
