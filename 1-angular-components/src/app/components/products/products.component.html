@@ -1,0 +1,35 @@
+<div class="container">
+    <div
+      class="row p-3 mt-1"
+      *ngFor="let p of products; let i = index"
+      [ngStyle]="{backgroundColor: p.available === 'Available' ? '#D5F5E3' : '#FADBD8'}">
+      
+      <div class="col-1">
+        <img [src]="p.image" alt="" [ngStyle]="{'max-width': '50px', 'max-height': '50px'}"/>
+      </div>
+    
+      <div class="col-8">
+          <div>
+            <h6>{{ p.name }}</h6>
+          </div>
+          <div class="row">
+            <div class="col" [ngStyle]="{ color: p.available === 'Available' ? 'Green' : 'Red' }">
+              {{ p.available }}
+            </div>
+            <div class="col"><strong>Price:</strong>${{ p.price }}</div>
+            <div class="col"><strong>Color:</strong>{{ p.color }}</div>
+          </div>
+      </div>
+      
+      <div class="col-3 align-self-center text-end">
+        <button type="button" class="btn btn-sm btn-success me-1">Show Details</button>
+        <button type="button" class="btn btn-sm btn-warning" *ngIf="p.available === 'Available'; else notifyme">
+          Buy Now
+        </button>
+        <ng-template #notifyme>
+          <button type="button" class="btn btn-sm btn-danger">Notify me</button>
+        </ng-template>
+      </div>
+      
+    </div>
+  </div>
