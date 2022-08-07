@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwoWayBindingComponent implements OnInit {
 
-  public message: string;
-  
+  public message: string = "Default Message";
+
   constructor() { }
 
   ngOnInit(): void {
