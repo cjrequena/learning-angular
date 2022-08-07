@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+    <h1 style="color: brown">Custom Binding Example</h1>
+  </div>
+  <div class="col-12">
+    <p class="fw-bold text-white bg-dark">I am a parent component</p>
+    <p><span class="fw-bold"> Myname is:</span> {{ name }}</p>
+    <p *ngIf="childComponentName!==null">
+      <span class="fw-bold">And my child component name is:</span> {{ childComponentName }}
+    </p>
+
+    <app-child [parentComponentName]="name" (childComponentNameEvent)="childComponentNameEvent($event)"
+    ></app-child>
+  </div>
+</div>
+<hr />

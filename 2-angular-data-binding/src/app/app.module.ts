@@ -7,6 +7,8 @@ import { InterpolationBindingComponent } from './components/interpolation-bindin
 import { PropertyBindingComponent } from './components/property-binding/property-binding.component';
 import { EventBindingComponent } from './components/event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
+import { ChildComponent } from './components/custom-binding/child/child.component';
+import { ParentsComponent } from './components/custom-binding/parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
     InterpolationBindingComponent,
     PropertyBindingComponent,
     EventBindingComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    ChildComponent,
+    ParentsComponent
   ],
   imports: [
     BrowserModule,
