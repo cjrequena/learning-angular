@@ -9,7 +9,7 @@
       <span class="fw-bold">And my child component name is:</span> {{ childComponentName }}
     </p>
 
-    <app-child [parentComponentName]="name" (childComponentNameEvent)="childComponentNameEvent($event)"
+    <app-child [parentComponentName]="name" (childComponentNameEvent)="handleChildComponentNameEvent($event)"
     ></app-child>
   </div>
 </div>

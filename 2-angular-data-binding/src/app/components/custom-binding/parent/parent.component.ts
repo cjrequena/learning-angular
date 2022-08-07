@@ -12,7 +12,7 @@ export class ParentsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  childComponentNameEvent(eventData: { name: string }) {
+  handleChildComponentNameEvent(eventData: { name: string }) {
     this.childComponentName = eventData.name;
   }
 }
