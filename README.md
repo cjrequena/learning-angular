@@ -10,10 +10,10 @@ The sample projects on this repository are implemented following the Youtube cou
     0.2 [Install Angular-CLI](#install-angular-cli)     
     0.3 [Create a new project](#create-a-new-project)   
     0.4 [Run a project](#run-a-project)
-1. [Angular Components](#angular-compoents)
-    1.1 [Angular Components Overview](#angular-components-overview)
-    1.2 [What is a Component](#what-is-a-component)
-2. [Angular Data Bindings](#angular-data-bindings)
+1. [Angular Components](#angular-compoents)     
+    1.1 [Angular Components Overview](#angular-components-overview)     
+    1.2 [What is a Component](#what-is-a-component)     
+2. [Angular Data Bindings](#angular-data-bindings)      
 
 # Angular Basics
 
