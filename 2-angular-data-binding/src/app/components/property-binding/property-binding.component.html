@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-12">
+    <h1 style="color: brown">Property Binding Examples</h1>
+  </div>
+  <div class="col-12">
+    <img [src]="imagePath" alt="" [hidden]="isHidden" />
+    <h1 [ngClass]="{special: isSpecial,'text-center': true,'text-white': true}">
+      Using '[ngClass]' property binding
+    </h1>
+    <h1 [class.special]="isSpecial" [style.color]="'white'">Using '[class.special]' [style.color] and  property binding</h1>
+  </div>
+</div>
+<hr />
