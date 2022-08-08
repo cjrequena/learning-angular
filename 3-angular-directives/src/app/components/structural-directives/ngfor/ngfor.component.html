@@ -12,21 +12,32 @@
 
   <div class="col-12">
     <h1>Example 1 <span class="text-muted display-6"></span></h1>
+    <div *ngFor="let item of items">
+      {{item.id}} - {{item.name}}
+    </div>
     <br />
 
-    <h1>Example 2 :: <span class="text-muted display-6"></span></h1>
+
+    <h1>Example 2 :: <span class="text-muted display-6">Repeating a component view</span></h1>
+    <app-item-detail *ngFor="let item of items" [item]="item"></app-item-detail>
+    <br />
+
+    <h1> 
+      Example 3 :: <span class="text-muted display-6">Getting the index of *ngFor</span>
+    </h1>
+    <div *ngFor="let item of items; let i = index">
+      {{item.id}} - {{item.name}} - index={{ i }}
+    </div>
     <br />
 
     <h1>
-      Example 3 ::
-      <span class="text-muted display-6"></span>
+      Example 4 :: <span class="text-muted display-6">Repeating elements when a condition is true</span>
     </h1>
-    <br />
+    <div *ngFor="let item of items; trackBy: trackByItems">
+      ({{item.id}}) - {{item.name}}
+    </div>
+    <br>
 
-    <h1>
-      Example 4 ::
-      <span class="text-muted display-6"></span>
-    </h1>
   </div>
 </div>
 <hr />

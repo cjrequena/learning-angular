@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { NgifComponent } from './components/structural-directives/ngif/ngif.component';
 import { NgforComponent } from './components/structural-directives/ngfor/ngfor.component';
 import { NgswitchComponent } from './components/structural-directives/ngswitch/ngswitch.component';
+import { ItemDetailComponent } from './components/structural-directives/ngfor/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NgifComponent,
     NgforComponent,
-    NgswitchComponent
+    NgswitchComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule
