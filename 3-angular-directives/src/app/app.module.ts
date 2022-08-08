@@ -7,6 +7,9 @@ import { NgforComponent } from './components/structural-directives/ngfor/ngfor.c
 import { NgswitchComponent } from './components/structural-directives/ngswitch/ngswitch.component';
 import { ItemDetailComponent } from './components/structural-directives/ngfor/item-detail/item-detail.component';
 import { FormsModule } from '@angular/forms';
+import { NgmodelComponent } from './components/attribute-directives/ngmodel/ngmodel.component';
+import { NgclassComponent } from './components/attribute-directives/ngclass/ngclass.component';
+import { NgstyleComponent } from './components/attribute-directives/ngstyle/ngstyle.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,11 @@ import { FormsModule } from '@angular/forms';
     NgifComponent,
     NgforComponent,
     NgswitchComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    NgmodelComponent,
+    NgclassComponent,
+    NgstyleComponent,
+    NgmodelComponent
   ],
   imports: [
     BrowserModule,
