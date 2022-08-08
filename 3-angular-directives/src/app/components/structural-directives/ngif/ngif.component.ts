@@ -9,7 +9,6 @@ export class NgifComponent implements OnInit {
   public condition: boolean = true;
   public condition2: boolean = false;
 
-
   constructor() {}
 
   ngOnInit(): void {}
