@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-12">
+    <h1 style="color: brown">NgIf</h1>
+    <p class="text-start text-muted">
+      A structural directive that conditionally includes a template based on the
+      value of an expression coerced to Boolean. When the expression evaluates
+      to true, Angular renders the template provided in a then clause, and when
+      false or null, Angular renders the template provided in an optional else
+      clause. The default template for the else clause is blank.
+    </p>
+  </div>
+
+  <div class="col-12">
+    <h1>Example 1 <span class="text-muted display-6">*ngIf="condition"</span></h1>
+    <div *ngIf="condition" class="text-white bg-dark">
+      Content to render when condition is true.
+    </div>
+    <br />
+
+    <h1>Example 2 :: <span class="text-muted display-6">Using ng-template</span></h1>
+    <ng-template [ngIf]="condition">
+      <div class="text-white bg-dark">
+        Content to render when condition is true.
+      </div>
+    </ng-template>
+    <br />
+
+    <h1>Example 3 :: <span class="text-muted display-6">*ngIf="condition; else elseBlock"</span></h1>
+    <div *ngIf="condition2; else elseBlock" class="text-white bg-dark">
+      Content to render when condition is true.
+    </div>
+    <ng-template #elseBlock>
+      <div class="text-white bg-danger">
+        Content to render when condition is false.
+      </div>
+    </ng-template>
+    <br />
+
+    <h1> Example 4 :: <span class="text-muted display-6">*ngIf="condition; then thenBlock else elseBlock</span>
+    </h1>
+    <div *ngIf="condition; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <div class="text-white bg-dark">
+        Content to render when condition is true.
+      </div>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div class="text-white bg-danger">
+        Content to render when condition is false.
+      </div>
+    </ng-template>
+  </div>
+</div>
+<hr />
