@@ -38,6 +38,12 @@
     </div>
     <br>
 
+    <h1>
+       <span class="text-muted display-6">Here is the expanded version of the short-form example</span>
+    </h1>
+    <ng-template ngFor let-item [ngForOf]="items" let-i="index" [ngForTrackBy]="trackByItems">
+      <li>({{item.id}}) - {{item.name}}</li>
+    </ng-template>
   </div>
 </div>
 <hr />

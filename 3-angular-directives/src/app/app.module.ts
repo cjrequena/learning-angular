@@ -6,6 +6,7 @@ import { NgifComponent } from './components/structural-directives/ngif/ngif.comp
 import { NgforComponent } from './components/structural-directives/ngfor/ngfor.component';
 import { NgswitchComponent } from './components/structural-directives/ngswitch/ngswitch.component';
 import { ItemDetailComponent } from './components/structural-directives/ngfor/item-detail/item-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ItemDetailComponent } from './components/structural-directives/ngfor/it
     ItemDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

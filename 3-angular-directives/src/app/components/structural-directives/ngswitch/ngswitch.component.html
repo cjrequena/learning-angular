@@ -1,29 +1,33 @@
 <div class="row">
     <div class="col-12">
       <h1 style="color: brown">NgSwitch</h1>
-      <p class="text-center text-muted">
-         
+      <p class="text-start text-muted">
+        Like the JavaScript switch statement, NgSwitch displays one element from among several possible 
+        elements, based on a switch condition. Angular puts only the selected element into the DOM.
       </p>
     </div>
   
     <div class="col-12">
-      <h1>Example 1 <span class="text-muted display-6"></span></h1>
+      <h1>Example  <span class="text-muted display-6"></span></h1>
+
+      <div class='card card text-white bg-dark mb-3'>
+        <div class='card-header'>
+          ngSwitch Example
+        </div>
+        <div class="card-body">
+          Input string : <input type='text' [(ngModel)]="num" />
+          <div [ngSwitch]="num">
+            <div *ngSwitchCase="'1'">One</div>
+            <div *ngSwitchCase="'2'">Two</div>
+            <div *ngSwitchCase="'3'">Three</div>
+            <div *ngSwitchCase="'4'">Four</div>
+            <div *ngSwitchCase="'5'">Five</div>
+            <div *ngSwitchCase="'6'">Six</div>
+            <div *ngSwitchDefault>This is Default</div>
+          </div>
+        </div>
+      </div>
       <br />
-  
-      <h1>Example 2 :: <span class="text-muted display-6"></span></h1>
-      <br />
-  
-      <h1>
-        Example 3 ::
-        <span class="text-muted display-6"></span>
-      </h1>
-      <br />
-  
-      <h1>
-        Example 4 ::
-        <span class="text-muted display-6"></span>
-      </h1>
-    </div>
   </div>
   <hr />
   
