@@ -1,1 +1,29 @@
-<p>ngclass works!</p>
+<div class="row">
+    <div class="col-12">
+      <h1 style="color: brown">NgClass</h1>
+      <p class="text-center text-muted">
+        Add or remove multiple CSS classes simultaneously with ngClass.
+      </p>
+    </div>
+  
+    <div class="col-12">
+      <h1>
+        Example 1 :: <span class="text-muted display-6">Using NgClass with an expression</span>
+      </h1>
+
+      <!-- toggle the "special" class on/off with a property -->
+     <div [ngClass]="isSpecial ? 'p-3 mb-2 bg-info text-dark' : ''">This div is special</div>
+
+      <br />
+
+      <h1>
+        Example 2 :: <span class="text-muted display-6">Using NgClass with a method</span>
+      </h1>
+
+      <!-- toggle the "special" class on/off with a property -->
+     <div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special.</div>
+
+      <br />
+  </div>
+  <hr />
+  

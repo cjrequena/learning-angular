@@ -1,1 +1,37 @@
-<p>ngstyle works!</p>
+<div class="row">
+  <div class="col-12">
+    <h1 style="color: brown">NgStyle</h1>
+    <p class="text-center text-muted">
+      Use NgStyle to set multiple inline styles simultaneously, based on the
+      state of the component.
+    </p>
+  </div>
+
+  <div class="col-12">
+    <h1>
+      Example 1 :: <span class="text-muted display-6">Setting inline styles with NgStyle</span>
+    </h1>
+    <div [ngStyle]="{ 'background-color': 'black', color: 'white' }">
+      This div has 'background-color': 'black', color: 'white' styles
+    </div>
+    <br>
+
+    <h1>
+      Example 2 :: <span class="text-muted display-6">Using ngStyle with a condition</span>
+    </h1>
+    <div [ngStyle]="{ 'background-color': available ? 'Green' : 'Red' }">
+      This div can has a background-color green or red depending on a condition
+    </div>
+    <br>
+
+    <h1>
+      Example 3 :: <span class="text-muted display-6">Using ngStyle with a method</span>
+    </h1>
+    <div [ngStyle]="currentStyles">
+      This div is initially italic, normal weight, and extra large (24px).
+    </div>
+    <br>
+
+  </div>
+</div>
+<hr>
