@@ -19,6 +19,10 @@ The sample projects on this repository are implemented following the Youtube cou
 3. [Angular Directives](#angular-directives)        
     3.1 [Angular Built-in Directives](#angular-built-in-directives)      
     3.2 [What are Directives](#what-are-directives)     
+4. [Angular Template Reference Variables](#angular-template-reference-variables)                
+    4.1 [Understanding template variables](#understanding-template-variables)       
+    4.2 [What are Template Reference Variables](#what-are-template-reference-variables)     
+    
 # Angular Basics
 
 ## Install Node
@@ -65,3 +69,7 @@ $ ng s --port 5555 # Serve to a different port
 # Angular Directives        
 ## [Angular Built-in Directives](https://angular.io/guide/built-in-directives)      
 ## [What are Directives](https://www.youtube.com/watch?v=Xc58hRwsvR8&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=19&ab_channel=procademy)     
+
+# Angular Template Reference Variables
+## [Understanding template variables](https://angular.io/guide/template-reference-variables)
+## [What are Template Reference Variables](https://youtu.be/af_Lw_gEHRw)
