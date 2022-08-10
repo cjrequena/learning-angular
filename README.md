@@ -15,7 +15,10 @@ The sample projects on this repository are implemented following the Youtube cou
     1.2 [What is a Component](#what-is-a-component)     
 2. [Angular Data Bindings](#angular-data-bindings)      
     2.1 [Angular Binding Syntax](#angular-binding-syntax)        
-    2.2 [What is a Data Binding](#what-is a-data-binding)
+    2.2 [What is a Data Binding](#what-is a-data-binding)          
+3. [Angular Directives](#angular-directives)
+    3.1 [Angular Built-in Directives](#angular-built-in-directives)     
+    3.2 [What are Directives](#what-are-directives)
 # Angular Basics
 
 ## Install Node
@@ -58,3 +61,7 @@ $ ng s --port 5555 # Serve to a different port
 # Angular Data Bindings
 ## [Angular Binding Syntax](https://angular.io/guide/binding-syntax)
 ## [What is a Data Binding](https://youtu.be/r8U2DVRArdY)
+
+# Angular Directives
+## [Angular Built-in Directives](https://angular.io/guide/built-in-directives)
+## [What are Directives](https://www.youtube.com/watch?v=Xc58hRwsvR8&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=19&ab_channel=procademy)
