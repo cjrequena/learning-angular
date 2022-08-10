@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from './item.type.ts';
+import { Item } from './item.type';
 
 @Component({
   selector: 'app-ngfor',
