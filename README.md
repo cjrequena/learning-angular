@@ -62,6 +62,6 @@ $ ng s --port 5555 # Serve to a different port
 ## [Angular Binding Syntax](https://angular.io/guide/binding-syntax)
 ## [What is a Data Binding](https://youtu.be/r8U2DVRArdY)
 
-# Angular Directives
+# Angular Directives    
 ## [Angular Built-in Directives](https://angular.io/guide/built-in-directives)
 ## [What are Directives](https://www.youtube.com/watch?v=Xc58hRwsvR8&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=19&ab_channel=procademy)
