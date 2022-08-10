@@ -16,9 +16,9 @@ The sample projects on this repository are implemented following the Youtube cou
 2. [Angular Data Bindings](#angular-data-bindings)      
     2.1 [Angular Binding Syntax](#angular-binding-syntax)        
     2.2 [What is a Data Binding](#what-is a-data-binding)          
-3. [Angular Directives](#angular-directives)
-    3.1 [Angular Built-in Directives](#angular-built-in-directives)     
-    3.2 [What are Directives](#what-are-directives)
+3. [Angular Directives](#angular-directives)        
+    3.1 [Angular Built-in Directives](#angular-built-in-directives)      
+    3.2 [What are Directives](#what-are-directives)     
 # Angular Basics
 
 ## Install Node
