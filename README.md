@@ -25,7 +25,7 @@ The sample projects on this repository are implemented following the Youtube cou
 5. [Angular ViewChild](#angular-viewchild)      
     5.1 [ViewChild](#viewchild)     
     5.2 [ViewChild in Angular](#viewchild-in-angular)       
-6. [View Encapsulation](https://angular.io/guide/view-encapsulation) {:target="_blank"}
+6. [View Encapsulation](https://angular.io/guide/view-encapsulation)
     
 # Angular Basics
 
