@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12">
+    <h1>Parent Component!</h1>
+    <div class="form-floating">
+      <input
+        id="birthDateInput"
+        type="date"
+        class="form-control mb-1"
+        (blur)="calculateAge()"
+        #birthDateInput
+      />
+      <label for="birthDateInput">Birth Date</label>
+    </div>
+    <div class="form-floating">
+      <input id="ageInput" type="text" class="form-control" #ageInput />
+      <label class="control-label" for="ageInput">Age: </label>
+    </div>
+    <br />
+    <app-child></app-child>
+    <p class="display-6">{{ childComponent.message }}</p>
+  </div>
+</div>
