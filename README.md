@@ -22,6 +22,9 @@ The sample projects on this repository are implemented following the Youtube cou
 4. [Angular Template Reference Variables](#angular-template-reference-variables)                
     4.1 [Understanding template variables](#understanding-template-variables)       
     4.2 [What are Template Reference Variables](#what-are-template-reference-variables)     
+5. [Angular ViewChild](#angular-viewchild)      
+    5.1 [ViewChild](#viewchild)     
+    5.2 [ViewChild in Angular](#viewchild-in-angular)       
     
 # Angular Basics
 
@@ -73,3 +76,7 @@ $ ng s --port 5555 # Serve to a different port
 # Angular Template Reference Variables
 ## [Understanding template variables](https://angular.io/guide/template-reference-variables)
 ## [What are Template Reference Variables](https://youtu.be/af_Lw_gEHRw)
+
+# Angular ViewChild     
+## [ViewChild](https://angular.io/api/core/ViewChild#viewchild)     
+## [ViewChild in Angular](https://youtu.be/tPYGJM1-qkk)     
