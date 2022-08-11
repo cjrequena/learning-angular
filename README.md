@@ -25,7 +25,9 @@ The sample projects on this repository are implemented following the Youtube cou
 5. [Angular ViewChild](#angular-viewchild)      
     5.1 [ViewChild](#viewchild)     
     5.2 [ViewChild in Angular](#viewchild-in-angular)       
-6. [View Encapsulation](https://angular.io/guide/view-encapsulation)
+6. [Angular View Encapsulation](#angular-view-encapsulation)        
+    6.1 [View Encapsulation](#view-encapsulation)       
+    6.2 [What is View Encapsulation](#what-is-view-encapsulation)       
     
 # Angular Basics
 
@@ -81,3 +83,7 @@ $ ng s --port 5555 # Serve to a different port
 # Angular ViewChild     
 ## [ViewChild](https://angular.io/api/core/ViewChild#viewchild)     
 ## [ViewChild in Angular](https://youtu.be/tPYGJM1-qkk)     
+
+# Angular View Encapsulation
+## [View Encapsulation](https://angular.io/guide/view-encapsulation)
+## [What is View Encapsulation](https://youtu.be/X-1TBjBx6pc)
