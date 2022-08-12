@@ -1,0 +1,26 @@
+<div class="container text-center m-5">
+  <div class="row mb-3">
+    <div class="col-12">
+      <h1 style="color: brown">Angular and Content Projection :: ng-content</h1>
+      <p class="text-muted">
+        Content projection is a pattern in which you insert, or project, the
+        content you want to use inside another component. For example, you could
+        have a Card component that accepts content provided by another
+        component.
+      </p>
+    </div>
+  </div>
+  <app-singleslot>
+    <p>Is content projection cool?</p>
+  </app-singleslot>
+  <app-multislot>
+    <p question>Is content projection cool?</p>
+    <p question2>Let's learn about content projection!</p>
+  </app-multislot>
+  <app-ngprojectas>
+    <p>Let's learn about content projection!</p>
+    <ng-container ngProjectAs="[question]">
+      <p>Is content projection cool?</p>
+    </ng-container>
+  </app-ngprojectas>
+</div>

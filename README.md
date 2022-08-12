@@ -87,3 +87,7 @@ $ ng s --port 5555 # Serve to a different port
 # Angular View Encapsulation
 ## [View Encapsulation](https://angular.io/guide/view-encapsulation)
 ## [What is View Encapsulation](https://youtu.be/X-1TBjBx6pc)
+
+# Angular Content Projection ng-content
+## [Content Projection](https://angular.io/guide/content-projection)
+## [What is ng-content](https://youtu.be/1Gkiq1u2aQc)
