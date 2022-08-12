@@ -1,0 +1,37 @@
+<div class="container mt-5 text-center">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <h1 style="color: brown">Angular Lifecycle hooks</h1>
+      <p class="text-muted text-start">
+        A component instance has a lifecycle that starts when Angular instantiates the component class 
+        and renders the component view along with its child views. The lifecycle continues with change 
+        detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed. The lifecycle ends when Angular destroys the component instance and removes its rendered template from the DOM. Directives have a similar lifecycle, as Angular creates, updates, and destroys instances in the course of execution.
+      </p>
+      <p class="text-muted text-start">       
+        Your application can use lifecycle hook methods to tap into key events in the lifecycle of a 
+        component or directive to initialize new instances, initiate change detection when needed, respond 
+        to updates during change detection, and clean up before deletion of instances.
+      </p>
+    </div>
+    <div class="col-12">
+      <input type="text" class="form-control mb-1" #input />
+      <button
+        (click)="onSubmit(input)"
+        class="form-control mb-1 btn btn-primary"
+      >
+        Submit
+      </button>
+      <app-lifecycle-hooks [value]="message" *ngIf="!destroy">
+        <h4>This is projected content {{ message }}</h4>
+      </app-lifecycle-hooks>
+      <br />
+      <button
+        class="form-control mb-1 btn btn-primary"
+        (click)="destroyComponent()"
+      >
+        Destroy
+      </button>
+    </div>
+    
+  </div>
+</div>
