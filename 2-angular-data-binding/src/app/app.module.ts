@@ -11,20 +11,23 @@ import { ChildComponent } from './components/custom-binding/child/child.componen
 import { ParentsComponent } from './components/custom-binding/parent/parent.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InterpolationBindingComponent,
-    PropertyBindingComponent,
-    EventBindingComponent,
-    TwoWayBindingComponent,
-    ChildComponent,
-    ParentsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        InterpolationBindingComponent,
+        PropertyBindingComponent,
+        EventBindingComponent,
+        TwoWayBindingComponent,
+        ChildComponent,
+        ParentsComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
+    providers: [],
+    exports: [
+        ChildComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
