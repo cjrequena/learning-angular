@@ -10,7 +10,7 @@
       </h1>
       <div *ngIf="display">
         <p class="display-6 bg-danger p-3">
-          This is a demo content.
+          This is a demo content using *ngIf
         </p>
       </div>
       <ng-template [ngIf]="display" ]>
@@ -29,7 +29,7 @@
       </h1>
       <div *ngIf="display; else elseBlock">
         <p class="display-6 bg-info p-3">
-          This is a demo content.
+          This is a demo content but using *ngIf else.
         </p>
       </div>
       <ng-template [ngIf]="display" [ngIfElse]="elseBlock" ]>
