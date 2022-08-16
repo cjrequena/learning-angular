@@ -14,6 +14,7 @@
       </div>
       <br>
     </div>
+
     <div class="col-12 mb-3">
       <h1>
         Example 2 :: <span class="text-muted display-6">Using renderer2 and setStyle</span>
@@ -25,6 +26,7 @@
       </div>
       <br>
     </div>
+
     <div class="col-12 mb-3">
       <h1>
         Example 3 :: <span class="text-muted display-6">Using renderer2 and setAttribute</span>
@@ -36,6 +38,7 @@
       </div>
       <br>
     </div>
+
     <div class="col-12 mb-3">
       <h1>
         Example 4 :: <span class="text-muted display-6">Using @Input decorator</span>
@@ -47,6 +50,7 @@
       </div>
       <br>
     </div>
+
     <div class="col-12 mb-3">
       <h1>
         Example 5 :: <span class="text-muted display-6">Using @HostBinding and @HostListener</span>
@@ -58,6 +62,7 @@
       </div>
       <br>
     </div>
+
     <div class="col-12 mb-3">
       <h1>
         Example 6 :: <span class="text-muted display-6">Using renderer2 and addClass</span>
@@ -69,6 +74,7 @@
       </div>
       <br>
     </div>
+
     <div class="col-12 mb-3">
       <h1>
         Example 7 :: <span class="text-muted display-6">Custom class directive</span>
@@ -80,5 +86,28 @@
       </div>
       <br>
     </div>
+
+    <div class="col-12 mb-3">
+      <h1>
+        Example 8 :: <span class="text-muted display-6">Custom style directive</span>
+      </h1>
+      <div  [appCustomStyle] ="{backgroundColor: active ? 'Green' : 'Red', color: 'white', fontWeight: 'bold', padding: '21px'}">
+        <p>This is a demo HTML content to understand how to create custom ngStyle directive in Angular.</p>
+      </div>
+      <br>
+    </div>
+
+    <div class="col-12 mb-3">
+      <h1>
+        Example 9 :: <span class="text-muted display-6">Custom if directive</span>
+      </h1>
+      <div class="bg-danger text-white p-3 my-3" *appCustomIf="display">
+        <p>This is a notice issued for all website users.</p>
+        <h3>This is important notice!</h3>
+      </div>
+      <button class="btn btn-primary" (click)="displayNotice()">Show notice</button>
+      <br>
+    </div>
+
   </div>
 </div>
