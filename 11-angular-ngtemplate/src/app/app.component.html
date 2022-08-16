@@ -1,0 +1,76 @@
+<div class="container text-center my-3">
+  <div class="row">
+    <div class="col-12 my-3 text-center">
+      <h1 style="color: brown">NgTemplate</h1>
+    </div>
+
+    <div class="col-12 mb-3">
+      <h1>
+        Example 1 :: <span class="text-muted display-6"> Using *ngIf</span>
+      </h1>
+      <div *ngIf="display">
+        <p class="display-6 bg-danger p-3">
+          This is a demo content.
+        </p>
+      </div>
+      <ng-template [ngIf]="display" ]>
+        <div>
+          <p class="display-6 bg-danger p-3">
+            This is a demo content but using ngTemplate and [ngIf].
+          </p>
+        </div>
+      </ng-template>
+      <button class="btn btn-primary" type="button" (click)="display=true">Display</button>
+      <br>
+    </div>
+
+    <div class="col-12 mb-3">
+      <h1>
+        Example 2 :: <span class="text-muted display-6"> Using *ngIf else</span>
+      </h1>
+      <div *ngIf="display; else elseBlock">
+        <p class="display-6 bg-info p-3">
+          This is a demo content.
+        </p>
+      </div>
+      <ng-template [ngIf]="display" [ngIfElse]="elseBlock" ]>
+        <div>
+          <p class="display-6 bg-info p-3">
+            This is a demo content but using ngTemplate and [ngIf] [ngIfElse].
+          </p>
+        </div>
+      </ng-template>
+
+      <ng-template #elseBlock>
+        <div>
+          <p class="display-6 bg-info p-3">
+            This is an else block using ng-template and elseBlock
+          </p>
+        </div>
+      </ng-template>
+
+      <button class="btn btn-primary" type="button" (click)="display=true">Display</button>
+      <br>
+    </div>
+
+    <div class="col-12 mb-3">
+      <h1>
+        Example 3 :: <span class="text-muted display-6"> Using *ngIf then else</span>
+      </h1>
+      <div *ngIf="display; then thenBlock else elseBlock2"></div>
+      <ng-template #thenBlock>
+        <p class="display-6 bg-warning p-3">
+          Content to render when condition is true.
+        </p>
+      </ng-template>
+      <ng-template #elseBlock2>
+        <p class="display-6 bg-warning p-3">
+          Content to render when condition is false.
+        </p>
+      </ng-template>
+      <button class="btn btn-primary" type="button" (click)="display=true">Display</button>
+      <br>
+    </div>
+
+  </div>
+</div>
