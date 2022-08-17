@@ -1,0 +1,6 @@
+
+  <div class="row row-cols-3 text-center" *ngFor="let user of users">
+    <div class="my-1">{{user.name}}</div>
+    <div class="my-1">{{user.job}}</div>
+    <button class="btn btn-primary my-1" (click)="showUserDetails(user)">Details</button>
+  </div>
