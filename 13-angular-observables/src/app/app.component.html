@@ -1,0 +1,31 @@
+<div class="container my-5">
+  <div class="col-12 text-center">
+    <h1 style="color: brown">Observables</h1>
+    <p class="text-center text-muted">
+      <strong>Observable:</strong> represents the idea of an invokable collection of future values or events. <br>
+      <strong>Observer:</strong> is a collection of callbacks that knows how to listen to values delivered by the
+      Observable. <br>
+      <strong>Subscription:</strong> represents the execution of an Observable, is primarily useful for cancelling the
+      execution. <br>
+      <strong>Operators:</strong> are pure functions that enable a functional programming style of dealing with
+      collections with operations like map, filter, concat, reduce, etc. <br>
+      <strong>Subject:</strong> is equivalent to an EventEmitter, and the only way of multicasting a value or event to
+      multiple Observers. <br>
+      <strong> Schedulers:</strong> are centralized dispatchers to control concurrency, allowing us to coordinate when
+      computation happens on e.g. setTimeout or requestAnimationFrame or others. <br>
+    </p>
+  </div>
+  <app-observable-eg1></app-observable-eg1>
+  <app-observable-eg2></app-observable-eg2>
+  <app-observable-eg3></app-observable-eg3>
+  <app-subject-eg1></app-subject-eg1>
+  <div class="col-12 text-center">
+    <h3>You entered: <i>{{message}}</i></h3>
+  </div>
+  <app-behavior-subject-eg1></app-behavior-subject-eg1>
+  <div class="col-12 text-center">
+    <h3>You entered: <i>{{message2}}</i></h3>
+  </div>
+  <app-operators></app-operators>
+
+</div>
