@@ -91,3 +91,33 @@ $ ng s --port 5555 # Serve to a different port
 # Angular Content Projection ng-content
 ## [Content Projection](https://angular.io/guide/content-projection)
 ## [What is ng-content](https://youtu.be/1Gkiq1u2aQc)
+
+# Angular Lifecycle Hooks
+## [Lifecycle Hooks](https://angular.io/guide/lifecycle-hooks)
+## [What are Lifecycle Hooks](https://youtu.be/jFk9-zV27BE)
+## [Angular Lifecycle Hook in Action ](https://youtu.be/0Ywak7Ppszw)
+
+# Angular ContentChild
+## [ContentChild](https://youtu.be/O8UxAgcF-ks)
+
+# Angular Custom Directives
+## [Custom Attribute Directive](https://youtu.be/DxfAEhdOl_0)
+## [How Structural Directive Works](https://youtu.be/xP86a-ZtIuE)
+## [Custom Structural Directive](https://youtu.be/4ldr69qHY8M)
+
+# Angular ng-template
+## []()
+
+# Angular Services
+## [Services in Angular](https://www.youtube.com/watch?v=1zLfEqImGLI&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=46)
+## [Creating a Service](https://youtu.be/cZV3_9oE8to)
+## [Dependency injection in Angular ](https://youtu.be/_8bz4FTNAV4)
+## [Hierarchical Injection in Angular ](https://youtu.be/LKnN9PhvxOU)
+## [Creating a Data Service](https://youtu.be/fpDgrktYb5M)
+## [Injecting Service into another Service](https://youtu.be/v6hLg-YnMj4)
+
+# Angular Observables
+## [What is Observable](https://www.youtube.com/watch?v=V4iMyVnQPqM&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=53&ab_channel=procademy)
+
+# Angular Routing
+## [What is Routing in Angular](https://www.youtube.com/watch?v=OMX6Wcx2yZA&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=59&ab_channel=procademy)
