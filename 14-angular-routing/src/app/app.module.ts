@@ -8,6 +8,10 @@ import {AppRoutingModule} from "./app-routing.module";
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { CoursesComponent } from './component/courses/courses.component';
+import { ErrorComponent } from './component/error/error.component';
+import {CourseService} from "./service/course.service";
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +19,17 @@ import { CoursesComponent } from './component/courses/courses.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    CoursesComponent
+    CoursesComponent,
+    ErrorComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
