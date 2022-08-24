@@ -6,6 +6,7 @@ import {ContactComponent} from "./component/contact/contact.component";
 import {CoursesComponent} from "./component/courses/courses.component";
 import {ErrorComponent} from "./component/error/error.component";
 import {Error} from "./model/error";
+import {CourseComponent} from "./component/courses/course/course.component";
 
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch: "full"},
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: "about", component: AboutComponent},
   {path: "contact", component: ContactComponent},
   {path: "courses", component: CoursesComponent},
+  {path: "courses/:id", component: CourseComponent},
+
   { path: 'not-found', component: ErrorComponent, data: new Error(404, "Not Found")},
   { path: '**', redirectTo: '/not-found' }
 ]

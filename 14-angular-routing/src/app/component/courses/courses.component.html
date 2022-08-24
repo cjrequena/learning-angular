@@ -1,7 +1,31 @@
 <div class="row">
   <div class="col-12">
-    <p class="display-1 text-center align-middle p-5">courses works!</p>
+    <h2 class="text-center align-middle mt-3">Courses</h2>
+    <hr style="border: #ccc 2px solid; margin: 5px 0px">
   </div>
 </div>
 
+<div class="mb-5 pb-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 mx-5">
 
+    <ng-container *ngFor="let course of courses">
+        <div class="card text-center m-1" style="width: 18rem">
+          <img [src]="course.image" class="card-img-top" style="height:140px;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{course.name}}</h5>
+            <p class="card-text">
+              {{course.description}}
+            </p>
+            <p class="card-text fw-bold text-dark">
+              {{course.type}}
+            </p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="btn btn-primary mx-1">Buy Now</a>
+            <a href="#" class="btn btn-primary" routerLink="{{course.id}}">Show Details</a>
+          </div>
+        </div>
+    </ng-container>
+  </div>
+  <hr style="border: #ccc 2px solid; margin: 5px 0px">
+</div>

@@ -17,6 +17,9 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Programmatically navigation using Router and ActivatedRoute
+   */
   goToHome() {
     //this.router.navigateByUrl("home"); // localhost:4200/home
     //this.router.navigate(["home"]); // localhost:4200/home

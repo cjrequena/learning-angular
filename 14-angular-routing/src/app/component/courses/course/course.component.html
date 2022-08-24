@@ -1,0 +1,28 @@
+<div class="row row-cols-1 g-0 m-5 pb-5 justify-content-center">
+
+  <div class="card text-center" style="width: 33rem;">
+    <img src="{{course.image}}" class="card-img-top">
+    <div class="card-body ">
+      <h5 class="card-title" *ngIf="!editable">{{course.name}}</h5>
+      <input class="form-control text-center" type="text" value="{{course.name}}" *ngIf="editable">
+      <p class="card-text">
+        {{course.description}}<br>
+        <b>Author: </b>{{course.author}}<br>
+        <b>Type: </b>{{course.type}}<br>
+        <b>Duration: </b>{{course.duration}}<br>
+        <b>Price: </b>{{course.price}}<br>
+      </p>
+    </div>
+    <div class="card-body">
+      <a [routerLink]="['/courses']" class="btn btn-dark mx-1">Go to courses</a>
+      <!-- Adding query params -->
+      <button type="button" class="btn btn-dark me-1" [routerLink]="['/courses',course.id]" [queryParams]="{edit: true}">Edit 1</button>
+      <!--Adding query params programmatically -->
+      <button type="button" class="btn btn-dark" (click)="addQueryParams()">Edit 2</button>
+
+    </div>
+  </div>
+</div>
+
+
+

@@ -12,6 +12,7 @@ import { ErrorComponent } from './component/error/error.component';
 import {CourseService} from "./service/course.service";
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { CourseComponent } from './component/courses/course/course.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './component/footer/footer.component';
     CoursesComponent,
     ErrorComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
