@@ -13,10 +13,9 @@ export class CourseComponent implements OnInit, OnDestroy {
 
   id: number;
   course: Course;
-  editable: boolean = false;
+  editable: boolean;
   paramMapSubscription: Subscription;
   queryParamMapSubscription: Subscription;
-
 
   constructor(
     private router: Router,
@@ -45,8 +44,9 @@ export class CourseComponent implements OnInit, OnDestroy {
       this.id = +parameters.get("id");
       this.course = this.courseService.courses.find((element) => element.id === this.id);
     });
-    this.queryParamMapSubscription = this.activatedRoute.queryParamMap.subscribe((queryParams)=>{
-      this.editable = Boolean(queryParams.get("edit"));
+    this.queryParamMapSubscription = this.activatedRoute.queryParamMap.subscribe((queryParams) => {
+      const edit = queryParams.get("edit") ?? "false";
+      this.editable = edit.toLocaleLowerCase() === 'true' ? true : false;
     });
   }
 
@@ -57,6 +57,6 @@ export class CourseComponent implements OnInit, OnDestroy {
 
   // Adding query params programmatically
   addQueryParams() {
-    this.router.navigate(["/courses", this.id], {queryParams: {edit: true}})
+    this.router.navigate(["/courses", this.id], {queryParams: {"edit": false}})
   }
 }
