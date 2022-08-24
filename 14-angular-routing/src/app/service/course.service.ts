@@ -9,7 +9,7 @@ export class CourseService {
       duration: 48,
       type: "Free",
       price: 0.00,
-      ratings: 3.5,
+      ratings: 4.8,
       image: "assets/courses/course-image-1.jpeg",
       description: "In this course you will learn the fundamentals of JavaScript. This course is purely designed for beginners and teaches you all the concepts of javascript step by step"
     } as Course,

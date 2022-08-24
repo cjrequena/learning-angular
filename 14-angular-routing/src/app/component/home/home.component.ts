@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Course} from "../../model/course";
+import {CourseService} from "../../service/course.service";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public courses: Course[] = [];
+
+  constructor(private courseService: CourseService) {
+  }
 
   ngOnInit(): void {
+    this.courses = this.courseService.courses;
   }
 
 }
