@@ -49,6 +49,10 @@ export class CourseComponent implements OnInit, OnDestroy {
       //this.editable = edit.toLocaleLowerCase() === 'true' ? true : false;
       this.editable = JSON.parse(queryParams.get("edit"));
     });
+
+    this.activatedRoute.fragment.subscribe((fragment) => {
+      console.log("Fragment :: " + fragment);
+    })
   }
 
   ngOnDestroy() {
@@ -58,6 +62,6 @@ export class CourseComponent implements OnInit, OnDestroy {
 
   // Adding query params programmatically
   addQueryParams() {
-    this.router.navigate(["/courses", this.id], {queryParams: {"edit": false}})
+    this.router.navigate(["/courses", this.id], {queryParams: {"edit": false}, fragment: "test-fragment"})
   }
 }

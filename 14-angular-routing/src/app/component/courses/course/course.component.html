@@ -16,9 +16,12 @@
     <div class="card-body">
       <a [routerLink]="['/courses']" class="btn btn-dark mx-1">Go to courses</a>
       <!-- Adding query params -->
-      <button type="button" class="btn btn-dark me-1" [routerLink]="['/courses',course.id]" [queryParams]="{edit: true}">Edit 1</button>
+      <button type="button" class="btn btn-dark m-1" [routerLink]="['/courses',course.id]" [queryParams]="{edit: true}">QueryParams Eg1</button>
       <!--Adding query params programmatically -->
-      <button type="button" class="btn btn-dark" (click)="addQueryParams()">Edit 2</button>
+      <button type="button" class="btn btn-dark m-1" (click)="addQueryParams()">QueryParams Eg2</button>
+      <!-- -->
+      <button type="button" class="btn btn-dark m-1" [routerLink]="['/courses',course.id]" [fragment]="'fragment1'">Fragment Eg1</button>
+
     </div>
   </div>
 </div>
