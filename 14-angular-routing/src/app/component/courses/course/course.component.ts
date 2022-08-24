@@ -45,8 +45,9 @@ export class CourseComponent implements OnInit, OnDestroy {
       this.course = this.courseService.courses.find((element) => element.id === this.id);
     });
     this.queryParamMapSubscription = this.activatedRoute.queryParamMap.subscribe((queryParams) => {
-      const edit = queryParams.get("edit") ?? "false";
-      this.editable = edit.toLocaleLowerCase() === 'true' ? true : false;
+      //const edit = queryParams.get("edit") ?? "false";
+      //this.editable = edit.toLocaleLowerCase() === 'true' ? true : false;
+      this.editable = JSON.parse(queryParams.get("edit"));
     });
   }
 
