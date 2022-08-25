@@ -23,9 +23,19 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <buton class="btn btn-success" [routerLink]="['signup']">Sign up</buton>
-          <buton class="btn btn-primary mx-1" [routerLink]="['signin']">Sign in</buton>
-          <buton class="btn btn-danger" [routerLink]="['signout']">Sign out</buton>
+          <!--          <buton class="btn btn-success" [routerLink]="['signup']">Sign up</buton>-->
+          <button
+            class="btn btn-primary mx-1"
+            *ngIf="!(authenticated$ | async)"
+            (click)="signIn()"
+          >Sign in
+          </button>
+          <button
+            class="btn btn-danger mx-1"
+            *ngIf="(authenticated$ | async)"
+            (click)="signOut()"
+          >Sign Out
+          </button>
 
         </ul>
       </div>

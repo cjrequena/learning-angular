@@ -1,15 +1,15 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {CourseService} from "../../../service/course.service";
 import {Course} from "../../../model/course";
 import {Subscription} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CourseService} from "../../../service/course.service";
 
 @Component({
-  selector: 'app-course',
-  templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css']
+  selector: 'app-course-detail',
+  templateUrl: './course-detail.component.html',
+  styleUrls: ['./course-detail.component.css']
 })
-export class CourseComponent implements OnInit, OnDestroy {
+export class CourseDetailComponent implements OnInit, OnDestroy {
 
   id: number;
   course: Course;
@@ -49,7 +49,6 @@ export class CourseComponent implements OnInit, OnDestroy {
       //this.editable = edit.toLocaleLowerCase() === 'true' ? true : false;
       this.editable = JSON.parse(queryParams.get("edit"));
     });
-
     this.activatedRoute.fragment.subscribe((fragment) => {
       console.log("Fragment :: " + fragment);
     })
@@ -65,3 +64,4 @@ export class CourseComponent implements OnInit, OnDestroy {
     this.router.navigate(["/courses", this.id], {queryParams: {"edit": false}, fragment: "test-fragment"})
   }
 }
+

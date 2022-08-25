@@ -121,3 +121,17 @@ $ ng s --port 5555 # Serve to a different port
 
 # Angular Routing
 ## [What is Routing in Angular](https://www.youtube.com/watch?v=OMX6Wcx2yZA&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=59&ab_channel=procademy)
+## [Implement Page not found Route](https://www.youtube.com/watch?v=mmappaGCZ2s&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=60&ab_channel=procademy)
+## [Configuring navigation links for Route](https://www.youtube.com/watch?v=7YLXCqT_EDc&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=61)
+## [Styling Active link using routerLinkActive](https://www.youtube.com/watch?v=n3lisFV1aN4&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=62&ab_channel=procademy)
+## [Absolute and Relative Route Paths](https://www.youtube.com/watch?v=qnTm0mk1R0Y&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=63&t=302s&ab_channel=procademy)
+## [Navigate between Routes Programmatically ](https://www.youtube.com/watch?v=H-1Pb9zXmkY&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=63&ab_channel=procademy)
+## [Passing Parameters to Route](https://www.youtube.com/watch?v=5k2ZUhMh6tA&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=65&t=653s&ab_channel=procademy)
+## [Passing Fragments to Route](https://www.youtube.com/watch?v=Yg7YsoW3QVk&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=67&t=1s&ab_channel=procademy)
+## [What is Child Routes in Angular](https://www.youtube.com/watch?v=8jDKknEXh3g&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=69&t=1s&ab_channel=procademy)
+## [Creating a Route Module File](https://www.youtube.com/watch?v=4fP8YR_BG4Q&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=69&ab_channel=procademy)
+## [What is Route Guard in Angular](https://www.youtube.com/watch?v=H-o7S8_NGdI&list=PL1BztTYDF-QNrtkvjkT6Wjc8es7QB4Gty&index=70&ab_channel=procademy)
+## []()
+## []()
+## []()
+

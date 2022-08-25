@@ -5,14 +5,16 @@ import {FormsModule} from "@angular/forms";
 import {AppComponent} from './app.component';
 import {HomeComponent} from './component/home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { AboutComponent } from './component/about/about.component';
-import { ContactComponent } from './component/contact/contact.component';
-import { CoursesComponent } from './component/courses/courses.component';
-import { ErrorComponent } from './component/error/error.component';
+import {AboutComponent} from './component/about/about.component';
+import {ContactComponent} from './component/contact/contact.component';
+import {ErrorComponent} from './component/error/error.component';
 import {CourseService} from "./service/course.service";
-import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { CourseComponent } from './component/courses/course/course.component';
+import {HeaderComponent} from './component/header/header.component';
+import {FooterComponent} from './component/footer/footer.component';
+import {CourseListComponent} from './component/course/course-list/course-list.component';
+import {CourseDetailComponent} from './component/course/course-detail/course-detail.component';
+import {CourseComponent} from "./component/course/course.component";
+import {AuthService} from "./service/auth-service";
 
 @NgModule({
   declarations: [
@@ -20,18 +22,22 @@ import { CourseComponent } from './component/courses/course/course.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    CoursesComponent,
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    CourseComponent
+    CourseComponent,
+    CourseListComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [CourseService],
+  providers: [
+    CourseService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

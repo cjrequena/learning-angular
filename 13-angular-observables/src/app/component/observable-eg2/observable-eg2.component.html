@@ -3,6 +3,8 @@
     Example 2 :: <span class="text-muted display-6">Using of()</span>
   </h1>
   <div class="col-12 bg-dark text-white text-center display-3">
-    <p *ngFor="let item of observable | async">{{ item }}</p>
+    <ng-container *ngFor="let item of observable | async">
+      <p>{{ item }}</p>
+    </ng-container>
   </div>
 </div>
