@@ -20,9 +20,10 @@ const routes: Routes = [
     component: CourseComponent,
     children: [
       {path: "", component: CourseListComponent},
-      {path: ":id", component: CourseDetailComponent}
-    ],
-    canActivateChild: [AuthGuard]
+      {path: ":id", component: CourseDetailComponent, canActivate: [AuthGuard]}
+    ]
+    //canActivate: [AuthGuard],
+    //canActivateChild: [AuthGuard]
   },
   {path: 'errors/401', component: ErrorComponent, data: new Error(401, "Unauthorized")},
   {path: 'errors/404', component: ErrorComponent, data: new Error(404, "Not Found")},
