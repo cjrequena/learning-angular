@@ -9,12 +9,13 @@ import {CourseComponent} from "./component/course/course.component";
 import {CourseListComponent} from "./component/course/course-list/course-list.component";
 import {CourseDetailComponent} from "./component/course/course-detail/course-detail.component";
 import {AuthGuard} from "./service/guard/auth.guard";
+import {CanDeactivateGuard} from "./service/guard/can-deactivate.guard";
 
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomeComponent},
   {path: "about", component: AboutComponent},
-  {path: "contact", component: ContactComponent},
+  {path: "contact", component: ContactComponent, canDeactivate:[CanDeactivateGuard]},
   {
     path: "courses",
     component: CourseComponent,

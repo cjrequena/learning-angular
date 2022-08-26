@@ -1,7 +1,24 @@
-<div class="row">
-  <div class="col-12">
-    <p class="display-1 text-center align-middle p-5">contact works!</p>
+<div class="row ">
+  <div class="col-12 text-center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
   </div>
 </div>
-
-
+<div class="row justify-content-center">
+  <div class="col-6">
+      <div class="mb-3">
+        <label for="inputTextFirstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="inputTextFirstName" [(ngModel)]="firstName">
+      </div>
+      <div class="mb-3">
+        <label for="inputTextLastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="inputTextLastName" [(ngModel)]="lastName">
+      </div>
+      <div class="mb-3">
+        <label for="inputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" [(ngModel)]="email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>

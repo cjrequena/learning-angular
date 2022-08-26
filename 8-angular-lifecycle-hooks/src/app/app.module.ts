@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle-hooks.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle-
     LifecycleHooksComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
