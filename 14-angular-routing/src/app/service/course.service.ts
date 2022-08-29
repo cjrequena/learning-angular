@@ -1,7 +1,7 @@
 import {Course} from "../model/course";
 
 export class CourseService {
-  courses: Course[] = [
+  private _courses: Course[] = [
     {
       id: 101,
       name: "JavaScript for beginners",
@@ -102,4 +102,11 @@ export class CourseService {
       description: "In this course you will learn about reactive web development using HTML & CSS. This course will start teaching you from basics of HTML & CSS and as you progress, you will learn all the advance concepts."
     } as Course
   ]
+
+  public getCourses():Promise<Course[]>{
+    const courses =  new Promise<Course[]>((resolve, reject)=>{
+      setTimeout(()=>{resolve(this._courses);}, 2000);
+    })
+    return courses;
+  }
 }

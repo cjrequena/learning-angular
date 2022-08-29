@@ -10,6 +10,7 @@ import {CourseListComponent} from "./component/course/course-list/course-list.co
 import {CourseDetailComponent} from "./component/course/course-detail/course-detail.component";
 import {AuthGuard} from "./service/guard/auth.guard";
 import {CanDeactivateGuard} from "./service/guard/can-deactivate.guard";
+import {CourseListResolver} from "./service/resolver/course-list.resolver.service";
 
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch: "full"},
@@ -20,7 +21,7 @@ const routes: Routes = [
     path: "courses",
     component: CourseComponent,
     children: [
-      {path: "", component: CourseListComponent},
+      {path: "", component: CourseListComponent, resolve: {courses: CourseListResolver}},
       {path: ":id", component: CourseDetailComponent, canActivate: [AuthGuard]}
     ]
     //canActivate: [AuthGuard],

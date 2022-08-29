@@ -15,7 +15,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.courses = this.courseService.courses;
+    this.courseService.getCourses().then(
+      (data) => {
+        this.courses = data;
+      }
+    );
   }
 
 }
