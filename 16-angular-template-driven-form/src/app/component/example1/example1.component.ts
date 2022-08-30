@@ -8,7 +8,6 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./example1.component.css']
 })
 export class Example1Component implements OnInit {
-
   submitted = false;
   model = new User();
   hobbies = [
