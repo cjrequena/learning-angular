@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-12 mt-3 text-center">
+      <h1 style="color: brown">Example 1</h1>
+    </div>
+    <form [formGroup]="signupForm" #_signupForm="ngForm" (ngSubmit)="signupForm.valid && onSubmit()">
+      <div class="text-center" *ngIf="_signupForm.submitted && !signupForm.valid && signupForm.touched">
+        <ngb-alert [type]="'danger'" [dismissible]="false">
+          <strong>Please</strong> enter valid data!
+        </ngb-alert>
+      </div>
+      <!-- -->
+      <div class="form-group">
+        <label for="userName">UserName</label>
+        <input
+          type="text"
+          id="userName"
+          formControlName="userName"
+          #_userName
+          [ngClass]="{
+            'form-control': true,
+            'is-invalid': (_signupForm.submitted && signupForm.get('userName').invalid) || (signupForm.get('userName').invalid && signupForm.get('userName').touched)
+          }">
+        <span
+          *ngIf="!signupForm.get('userName').valid && signupForm.get('userName').touched"
+          class="help-block">
+              <span *ngIf="signupForm.get('userName').errors['forbidden_name']">This name is invalid!</span>
+              <span *ngIf="signupForm.get('userName').errors['required']">This field is required!</span>
+          </span>
+      </div>
+      <!---->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          #_email
+          [ngClass]="{
+            'form-control': true,
+            'is-invalid': (_signupForm.submitted && signupForm.get('email').invalid) || (signupForm.get('email').invalid && signupForm.get('email').touched)
+          }"
+        >
+      </div>
+      <!---->
+      <!-- -->
+      <div>
+        <h4>Your Hobbies</h4>
+        <button
+          class="btn btn-dark my-1"
+          type="button"
+          (click)="onAddHobby()">
+          Add Hobby
+        </button>
+        <div
+          formArrayName="hobbies"
+          class="form-group"
+          *ngFor="let hobbyControl of hobbiesControls; let i = index">
+          <input type="text" class="form-control" [formControlName]="i">
+        </div>
+      </div>
+
+      <!---->
+      <button class="btn btn-primary mt-2" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<div class="row justify-content-center m-5" *ngIf="submitted">
+  <div class="col-12">
+    <h3>Your Data</h3>
+    <p>Username: {{ user.userName }}</p>
+    <p>Mail: {{ user.email }}</p>
+    <p>Hobbies: {{ user.hobbies }}</p>
+  </div>
+</div>
+<hr>

@@ -17,9 +17,10 @@ import { Example2Component } from './component/example2/example2.component';
         FormsModule
     ],
     providers: [],
-    exports: [
-        Example1Component
-    ],
+  exports: [
+    Example1Component,
+    Example2Component
+  ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
