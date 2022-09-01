@@ -7,7 +7,7 @@ import {AfterContentInit, Component, ContentChild, ElementRef, OnInit} from '@an
 })
 export class ChildComponent implements OnInit,AfterContentInit {
 
-  @ContentChild('paragraph')
+  @ContentChild("paragraph")
   private paragraphEl: ElementRef;
 
   constructor() {
@@ -17,7 +17,7 @@ export class ChildComponent implements OnInit,AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.paragraphEl.nativeElement.textContent = 'This is new paragraph value.'
+    this.paragraphEl.nativeElement.textContent = "This is new paragraph value from child component using @ContentChild"
     console.log(this.paragraphEl.nativeElement.textContent);
   }
 
