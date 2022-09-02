@@ -5,7 +5,7 @@
         Add or remove multiple CSS classes simultaneously with ngClass.
       </p>
     </div>
-  
+
     <div class="col-12">
       <h1>
         Example 1 :: <span class="text-muted display-6">Using NgClass with an expression</span>
@@ -21,9 +21,17 @@
       </h1>
 
       <!-- toggle the "special" class on/off with a property -->
-     <div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special.</div>
+     <div [ngClass]="currentClasses">This div is initially savable, unchanged, and special.</div>
+
+      <br />
+
+      <h1>
+        Example 3 :: <span class="text-muted display-6">Multiple classes</span>
+      </h1>
+
+      <!-- toggle the "special" class on/off with a property -->
+      <div [ngClass]="{'p-3 mb-2 text-dark': isSpecial, 'bg-primary': true}">This div is special</div>
 
       <br />
   </div>
   <hr />
-  

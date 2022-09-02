@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ngclass.component.css'],
 })
 export class NgclassComponent implements OnInit {
-  
+
   public currentClasses: Record<string, boolean> = {};
   public isSpecial: boolean = true;
   public canSave: boolean = true;
@@ -21,7 +21,7 @@ export class NgclassComponent implements OnInit {
   setCurrentClasses() {
     // CSS classes: added/removed per current state of component properties
     this.currentClasses =  {
-      saveable: this.canSave,
+      savable: this.canSave,
       modified: !this.isUnchanged,
       'p-3 mb-2 bg-info text-dark':  this.isSpecial
     };
