@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '18-angular-pipes';
+  title = '18-angular-builtin-pipes';
 }
