@@ -33,7 +33,7 @@ export class CourseDetailComponent implements OnInit, OnDestroy {
     //this.course = this.courseService.courses.find((element) => element.id === this.id);
 
     // The code bellow won't work unless the component receive the edit queryParam from courses component.
-    // in this case it is needed an observable approach.
+    // in this case it is needed an observable1 approach.
     //this.editable = this.activatedRoute.snapshot.queryParams["edit"] // old approach
     //this.id = +this.activatedRoute.snapshot.paramMap.get("id");
 

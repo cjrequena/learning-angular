@@ -1,8 +1,19 @@
 <div class="row mt-3">
   <h1 class="text-center">
-    Example 1 :: <span class="text-muted display-6"></span>
+    Observables :: <span class="text-muted display-6"></span>
   </h1>
-  <div class="col-12 bg-dark text-white text-center display-3">
+
+  <div class="col-12 bg-dark text-white text-center display-3 mt-3">
     <p>{{ title }}</p>
+  </div>
+
+  <div class="col-12 bg-dark text-white text-center display-3 mt-3">
+    <ng-container *ngFor="let item of observable2 | async">
+      <p>{{ item }}</p>
+    </ng-container>
+  </div>
+
+  <div class="col-12 bg-dark text-white text-center display-3 mt-3">
+    <p>{{ myNumber }}</p>
   </div>
 </div>

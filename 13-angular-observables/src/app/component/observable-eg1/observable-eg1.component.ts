@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subscription} from "rxjs";
+import {from, Observable, of, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-observable-eg1',
@@ -9,11 +9,23 @@ import {Observable, Subscription} from "rxjs";
 export class ObservableEg1Component implements OnInit, OnDestroy {
 
   title: string = "Default";
-  subscription: Subscription = null;
-  observable: Observable<any> = null;
+  myNumber: number = 0;
+  array1 = [1, 2, 6, 7, 8];
+  array2 = ['A', 'B', 'C'];
+
+  observable1: Observable<any> = null;
+  subscription1: Subscription = null;
+
+  observable2: Observable<Array<any>> = null;
+  subscription2: Subscription = null;
+
+  observable3: Observable<number> = null;
+  subscription3: Subscription = null;
+
+
 
   constructor() {
-    this.observable = new Observable<any>(subscriber => {
+    this.observable1 = new Observable<any>(subscriber => {
       setTimeout(() => {
         subscriber.next(1);
       }, 1000);
@@ -37,16 +49,23 @@ export class ObservableEg1Component implements OnInit, OnDestroy {
         subscriber.complete();
       }, 8000);
     });
+
+    //--
+    this.observable2 = of(this.array1, this.array2);
+
+    //--
+    this.observable3 = from(this.array1);
+
   }
 
   ngOnInit(): void {
-    this.subscription = this.observable.subscribe(
+    this.subscription1 = this.observable1.subscribe(
       (next) => {
         console.log("ObservableEg1Component :: value :: " + next);
         this.title = next;
       },
       (error) => {
-        console.log("ObservableEg1Component :: error: " + error);
+        console.log("Observable1 :: error: " + error);
         this.title = error;
       },
       () => {
@@ -54,10 +73,27 @@ export class ObservableEg1Component implements OnInit, OnDestroy {
         this.title = "Completed";
       }
     )
+
+    //--
+    this.subscription2 = this.observable2.subscribe(
+      (next) => {
+        console.log("Observable2 :: value: " + next);
+      }
+    );
+
+    //--
+    this.subscription3 = this.observable3.subscribe(
+      (next) => {
+        console.log("Observable3 :: value: " + next);
+        this.myNumber = next;
+      }
+    );
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscription1.unsubscribe();
+    this.subscription2.unsubscribe();
+    this.subscription3.unsubscribe();
   }
 
 }

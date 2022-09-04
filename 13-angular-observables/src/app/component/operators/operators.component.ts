@@ -23,7 +23,7 @@ export class OperatorsComponent implements OnInit, OnDestroy {
   operate(){
     return this.observable.pipe(
       filter(value => value<=100),
-      map(value => value + "-filtered-then-mapped"),
+      map(value => value + "-filtered-then-mapped")
     );
   }
 
