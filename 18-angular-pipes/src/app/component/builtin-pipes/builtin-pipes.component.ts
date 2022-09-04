@@ -12,7 +12,6 @@ export class BuiltinPipesComponent implements OnInit {
   totalMarks: number;
   students: Student[];
 
-
   constructor(private studentService: StudentService) {
   }
 
@@ -28,4 +27,5 @@ export class BuiltinPipesComponent implements OnInit {
   changeGender() {
     this.students[0].gender = 'Female';
   }
+
 }

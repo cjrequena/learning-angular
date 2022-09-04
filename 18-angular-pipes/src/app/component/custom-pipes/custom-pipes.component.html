@@ -1,5 +1,58 @@
-<div class="row my-5">
+<div class="row">
   <div class="col-12">
-    <p>custom-pipes works!</p>
+    <div class="col-12 my-5 text-center">
+      <h1 style="color: brown">Custom pipes Example 1</h1>
+    </div>
+
+    <div>
+      <input
+        id="filter"
+        type="text"
+        placeholder="Search by gender"
+        class="form-control my-1"
+        #_filterLR
+        [(ngModel)]="filter"
+      >
+    </div>
+    <div>
+      <h3>Total Students: {{ totalStudents$ | async }}</h3>
+    </div>
+    <table class="table table-light">
+      <thead>
+      <tr class="table-dark">
+        <th scope="col">Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Marks</th>
+        <th scope="col">Percentage</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Gender</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--
+      This is using a filter with pipes, not recommended because for pure changes does not work unless you change
+      the reference of the students array or unless you set pure to false into the pipe which is not good for
+      performance
+      <ng-container *ngFor="let student of students | customStudentFilterPipe : filter; let i = index">
+      -->
+      <ng-container *ngFor="let student of studentsMirror; let i = index">
+        <tr [ngClass]="{'table-secondary': i%2}">
+          <td>{{student.name}}</td>
+          <td>{{student.course | customLowerCase}}</td>
+          <td>{{student.marks}}</td>
+          <td>{{ (student.marks / this.totalMarks) | customPercent : 2 }}</td>
+          <td>{{student.dateOfBirth | date:'dd/MM/yyyy' | customUppercase}}</td>
+          <td>{{student.gender | customLowerCase }}</td>
+        </tr>
+      </ng-container>
+
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <div class="btn-group">
+    <button class="btn btn-primary me-1" (click)="addDummyStudent()">Add Student</button>
+    <button class="btn btn-primary" (click)="changeGender()">Change Gender</button>
   </div>
 </div>
