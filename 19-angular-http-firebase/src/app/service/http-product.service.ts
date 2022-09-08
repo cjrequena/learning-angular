@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Product} from "../model/product";
-import {Observable, Subject, throwError} from "rxjs";
+import {map, Observable, Subject} from "rxjs";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
 @Injectable({
@@ -36,21 +36,66 @@ export class HttpProductService {
     // );
   }
 
-  retrieve = (): Product[] => {
-    return Array.from([]);
+  retrieve = (): Observable<Product[]> => {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
 
+    const params = new HttpParams()
+      .set('print', 'pretty').set('pageNum', 1);
+
+    let observable = this.httpClient.get<{ [key: string]: Product }>(
+      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products.json",
+      {"headers": headers, "params": params})
+    return observable.pipe(
+      map((response) => {
+        const products = [];
+        for (const key in response) {
+          if (response.hasOwnProperty(key)) {
+            products.push({...response[key], id: key});
+          }
+        }
+        return products;
+      })
+    );
   }
 
-  retrieveById = (id: string): Product => {
-    return null;
+  retrieveById = (id: string): Observable<Product> => {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
+
+    let observable = this.httpClient.get<any>(
+      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products/" + id + ".json",
+      {"headers": headers});
+
+    return observable.pipe(
+      map((response) => {
+        response.id = id;
+        return response;
+      })
+    )
   }
 
-  update = (id: string, product: Product): boolean => {
-    return null;
+  update = (id: string, product: Product) => {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
+    this.httpClient.put(
+      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products/" + id + ".json",
+      product,
+      {"headers": headers})
+      .subscribe();
   }
 
-  delete = (id: string): boolean => {
-    return null;
+  delete = (id: string) => {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
+    this.httpClient.delete(
+      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products/" + id + ".json",
+      {"headers": headers})
+      .subscribe();
   }
 
 

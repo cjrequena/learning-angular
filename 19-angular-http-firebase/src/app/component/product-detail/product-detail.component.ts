@@ -18,12 +18,18 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   private _onClickedEditProductSubscription: Subscription;
 
   constructor(
-    private productService: ProductService,
+    //private productService: ProductService,
     private httpProductService: HttpProductService
   ) {}
 
   ngOnInit(): void {
-    this._onClickedEditProductSubscription = this.productService.onClickedEditProduct$.subscribe(
+    // this._onClickedEditProductSubscription = this.productService.onClickedEditProduct$.subscribe(
+    //   (product) => {
+    //     this.onEditProduct(product);
+    //   }
+    // );
+
+    this._onClickedEditProductSubscription = this.httpProductService.onClickedEditProduct$.subscribe(
       (product) => {
         this.onEditProduct(product);
       }
@@ -42,10 +48,16 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     product.price = this.productForm.value.price;
 
     if (this.editMode) {
-      this.productService.update(product.id, product);
+      //this.productService.update(product.id, product);
+      //this.editMode = false;
+
+      // Using http service
+      this.httpProductService.update(product.id, product);
       this.editMode = false;
     }else{
       //this.productService.create(product);
+
+      // Using http service
       this.httpProductService.create(product);
     }
     this.productForm.resetForm();
