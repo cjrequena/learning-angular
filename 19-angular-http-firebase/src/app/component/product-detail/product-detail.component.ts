@@ -15,6 +15,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   editMode: boolean = false;
 
   private _onClickedEditProductSubscription: Subscription;
+  private _httpProductServiceSubscription: Subscription;
+
 
   constructor(
     private httpProductService: HttpProductService
@@ -30,6 +32,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._onClickedEditProductSubscription.unsubscribe();
+    this._httpProductServiceSubscription.unsubscribe();
   }
 
   saveProduct() {
@@ -40,11 +43,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     product.price = this.productForm.value.price;
 
     if (this.editMode) {
-      this.httpProductService.update(product.id, product);
+      this._httpProductServiceSubscription = this.httpProductService.update(product.id, product).subscribe();
       this.editMode = false;
     }else{
-      // Using http service
-      this.httpProductService.create(product);
+      this._httpProductServiceSubscription = this.httpProductService.create(product).subscribe();
     }
     this.productForm.resetForm();
   }
@@ -57,7 +59,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       name: product.name,
       description: product.description,
       price: product.price
-
     })
   }
 

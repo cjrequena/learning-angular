@@ -10,11 +10,11 @@ import {Subscription} from "rxjs";
 })
 export class ProductListComponent implements OnInit, OnDestroy {
 
-  public productList: Product[];
-  httpProductServiceSubscription: Subscription;
+  public productList?: Product[];
+  private httpProductServiceSubscription: Subscription;
 
   constructor(
-    private httpProductService: HttpProductService
+    public httpProductService: HttpProductService
   ) {
   }
 
@@ -31,7 +31,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   onDeleteProduct = (id: string) => {
-    this.httpProductService.delete(id);
+    this.httpProductServiceSubscription = this.httpProductService.delete(id).subscribe();
+    this.onFetch();
   }
 
   onEditProduct = (id: string) => {

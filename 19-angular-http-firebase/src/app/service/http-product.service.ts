@@ -10,32 +10,16 @@ const baseUrl = "https://learning-angular-6d212-default-rtdb.europe-west1.fireba
 })
 export class HttpProductService {
 
-
   private _onClickedEditProduct: Subject<Product> = new Subject<Product>();
   private _onClickedEditProduct$ = this._onClickedEditProduct.asObservable();
 
   constructor(private httpClient: HttpClient) {
   }
 
-  create = (product: Product) => {
+  create = (product: Product): Observable<any> => {
     product.id = null;
     const headers = new HttpHeaders({"custom-header": "header-1"});
-    const observer = {
-      next: (response) => console.log('Observer got a next value: ' + response.name),
-      error: (error) => console.error('Observer got an error: ' + error),
-      complete: () => console.log('Observer got a complete notification'),
-    };
-    let observable = this.httpClient.post<{ name: string }>(
-      `${baseUrl}/.json`,
-      product, {headers: headers});
-    observable.subscribe(observer);
-
-    // let observable = this.httpClient.post<{ name: string }>(
-    //   `${baseUrl}/.json`,
-    //   product, {headers: headers});
-    // observable.subscribe(
-    //   (response)=>{console.log(response)}
-    // );
+    return this.httpClient.post<{ name: string }>(`${baseUrl}/.json`, product, {headers: headers});
   }
 
   retrieve = (): Observable<Product[]> => {
@@ -50,6 +34,7 @@ export class HttpProductService {
       "headers": headers,
       "params": params
     })
+
     return observable.pipe(
       map((response) => {
         const products = [];
@@ -78,18 +63,18 @@ export class HttpProductService {
     )
   }
 
-  update = (id: string, product: Product) => {
+  update = (id: string, product: Product): Observable<any> => {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
-    this.httpClient.put(`${baseUrl}/${id}/.json`, product, {"headers": headers}).subscribe();
+    return this.httpClient.put(`${baseUrl}/${id}/.json`, product, {"headers": headers})
   }
 
-  delete = (id: string) => {
+  delete = (id: string): Observable<any> => {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
-    this.httpClient.delete(`${baseUrl}/${id}/.json`, {"headers": headers}).subscribe();
+    return this.httpClient.delete(`${baseUrl}/${id}/.json`, {"headers": headers});
   }
 
 
