@@ -29,8 +29,7 @@
       performance
       <ng-container *ngFor="let student of students | customStudentFilterPipe : filter; let i = index">
       -->
-<!--      <ng-container *ngFor="let product of productList$ | async; let i = index">-->
-      <ng-container *ngFor="let product of productList; let i = index">
+      <ng-container *ngFor="let product of productList$ | async; let i = index">
         <tr [ngClass]="{'table-secondary': i%2}">
           <td>{{product.name}}</td>
           <td>{{product.description}}</td>

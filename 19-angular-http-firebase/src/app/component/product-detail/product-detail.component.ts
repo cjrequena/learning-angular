@@ -20,7 +20,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private httpProductService: HttpProductService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this._onClickedEditProductSubscription = this.httpProductService.onClickedEditProduct$.subscribe(
@@ -45,9 +46,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     if (this.editMode) {
       this._httpProductServiceSubscription = this.httpProductService.update(product.id, product).subscribe();
       this.editMode = false;
-    }else{
+    } else {
       this._httpProductServiceSubscription = this.httpProductService.create(product).subscribe();
     }
+    setTimeout(() => {this.httpProductService.retrieve()}, 369);
     this.productForm.resetForm();
   }
 

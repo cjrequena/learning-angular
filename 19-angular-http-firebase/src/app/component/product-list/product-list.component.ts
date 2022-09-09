@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Product} from "../../model/product";
 import {HttpProductService} from "../../service/http-product.service";
-import {Subscription} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +10,7 @@ import {Subscription} from "rxjs";
 })
 export class ProductListComponent implements OnInit, OnDestroy {
 
-  public productList?: Product[];
+  public productList$:Observable<Product[]>;
   private httpProductServiceSubscription: Subscription;
 
   constructor(
@@ -19,11 +19,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.httpProductServiceSubscription = this.httpProductService.retrieve().subscribe(
-      (productList) => {
-        this.productList = productList;
-      }
-    );
+    this.productList$ = this.httpProductService.retrieve();
   }
 
   ngOnDestroy(): void {
@@ -32,7 +28,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   onDeleteProduct = (id: string) => {
     this.httpProductServiceSubscription = this.httpProductService.delete(id).subscribe();
-    this.onFetch();
+    setTimeout(() => {this.httpProductService.retrieve()}, 369);
   }
 
   onEditProduct = (id: string) => {
@@ -44,11 +40,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   onFetch() {
-    this.httpProductServiceSubscription = this.httpProductService.retrieve().subscribe(
-      (productList) => {
-        this.productList = productList;
-      }
-    );
+    this.productList$ = this.httpProductService.retrieve();
   }
 
 }

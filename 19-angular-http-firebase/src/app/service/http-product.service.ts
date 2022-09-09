@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Product} from "../model/product";
-import {map, Observable, Subject} from "rxjs";
+import {from, map, Observable, Subject} from "rxjs";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
 const baseUrl = "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products";
@@ -9,6 +9,9 @@ const baseUrl = "https://learning-angular-6d212-default-rtdb.europe-west1.fireba
   providedIn: 'root'
 })
 export class HttpProductService {
+
+  private _productList:Subject<Product[]> = new Subject<Product[]>();
+  private _productList$:Observable<Product[]> = this._productList.asObservable();
 
   private _onClickedEditProduct: Subject<Product> = new Subject<Product>();
   private _onClickedEditProduct$ = this._onClickedEditProduct.asObservable();
@@ -35,7 +38,7 @@ export class HttpProductService {
       "params": params
     })
 
-    return observable.pipe(
+    observable.pipe(
       map((response) => {
         const products = [];
         for (const key in response) {
@@ -45,7 +48,13 @@ export class HttpProductService {
         }
         return products;
       })
+    ).subscribe(
+      (productList)=>{
+        this._productList.next(productList);
+      }
     );
+
+    return this._productList$;
   }
 
   retrieveById = (id: string): Observable<Product> => {
