@@ -45,11 +45,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
     if (this.editMode) {
       this._httpProductServiceSubscription = this.httpProductService.update(product.id, product).subscribe();
-      this.editMode = false;
     } else {
       this._httpProductServiceSubscription = this.httpProductService.create(product).subscribe();
     }
     setTimeout(() => {this.httpProductService.retrieve()}, 369);
+    this.editMode = false;
     this.productForm.resetForm();
   }
 
