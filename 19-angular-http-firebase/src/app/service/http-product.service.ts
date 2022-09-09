@@ -3,6 +3,8 @@ import {Product} from "../model/product";
 import {map, Observable, Subject} from "rxjs";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
+const baseUrl = "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,12 +26,12 @@ export class HttpProductService {
       complete: () => console.log('Observer got a complete notification'),
     };
     let observable = this.httpClient.post<{ name: string }>(
-      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products.json",
+      `${baseUrl}/.json`,
       product, {headers: headers});
     observable.subscribe(observer);
 
     // let observable = this.httpClient.post<{ name: string }>(
-    //   "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products.json",
+    //   `${baseUrl}/.json`,
     //   product, {headers: headers});
     // observable.subscribe(
     //   (response)=>{console.log(response)}
@@ -44,9 +46,10 @@ export class HttpProductService {
     const params = new HttpParams()
       .set('print', 'pretty').set('pageNum', 1);
 
-    let observable = this.httpClient.get<{ [key: string]: Product }>(
-      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products.json",
-      {"headers": headers, "params": params})
+    let observable = this.httpClient.get<{ [key: string]: Product }>(`${baseUrl}.json`, {
+      "headers": headers,
+      "params": params
+    })
     return observable.pipe(
       map((response) => {
         const products = [];
@@ -65,9 +68,7 @@ export class HttpProductService {
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
 
-    let observable = this.httpClient.get<any>(
-      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products/" + id + ".json",
-      {"headers": headers});
+    let observable = this.httpClient.get<any>(`${baseUrl}/${id}/.json`, {"headers": headers});
 
     return observable.pipe(
       map((response) => {
@@ -81,21 +82,14 @@ export class HttpProductService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
-    this.httpClient.put(
-      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products/" + id + ".json",
-      product,
-      {"headers": headers})
-      .subscribe();
+    this.httpClient.put(`${baseUrl}/${id}/.json`, product, {"headers": headers}).subscribe();
   }
 
   delete = (id: string) => {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
-    this.httpClient.delete(
-      "https://learning-angular-6d212-default-rtdb.europe-west1.firebasedatabase.app/products/" + id + ".json",
-      {"headers": headers})
-      .subscribe();
+    this.httpClient.delete(`${baseUrl}/${id}/.json`, {"headers": headers}).subscribe();
   }
 
 

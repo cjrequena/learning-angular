@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {ProductService} from "../../service/product.service";
 import {Subscription} from "rxjs";
 import {Product} from "../../model/product";
-import {HttpProductService} from "../../service/http-product.service";
 
 @Component({
   selector: 'app-product-detail',
@@ -17,11 +17,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   private _onClickedEditProductSubscription: Subscription;
 
   constructor(
-    private httpProductService: HttpProductService
+    private productService: ProductService
   ) {}
 
   ngOnInit(): void {
-    this._onClickedEditProductSubscription = this.httpProductService.onClickedEditProduct$.subscribe(
+    this._onClickedEditProductSubscription = this.productService.onClickedEditProduct$.subscribe(
       (product) => {
         this.onEditProduct(product);
       }
@@ -40,11 +40,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     product.price = this.productForm.value.price;
 
     if (this.editMode) {
-      this.httpProductService.update(product.id, product);
+      this.productService.update(product.id, product);
       this.editMode = false;
     }else{
-      // Using http service
-      this.httpProductService.create(product);
+      this.productService.create(product);
     }
     this.productForm.resetForm();
   }

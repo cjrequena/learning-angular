@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Product} from "../model/product";
 import {Observable, Subject} from "rxjs";
+import {LoggerService} from "./logger.service";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ProductService {
   private _onClickedEditProduct: Subject<Product> = new Subject<Product>();
   private _onClickedEditProduct$ = this._onClickedEditProduct.asObservable();
 
-  constructor() {
+  constructor(private logger: LoggerService) {
     this._productSet = new Set<Product>([
       {id: "1", name: "Dummy product 1", description: "A dummy product description", price: 369} as Product,
       {id: "2", name: "Dummy product 2", description: "A dummy product description", price: 369} as Product,
