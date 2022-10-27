@@ -62,7 +62,7 @@ export class HttpProductService {
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
 
-    let observable = this.httpClient.get<any>(`${baseUrl}/${id}/.json`, {"headers": headers});
+    let observable = this.httpClient.get<any>(`${baseUrl}/${id}/.json`, {headers: headers, observe: "body", responseType: "json"});
 
     return observable.pipe(
       map((response) => {
@@ -76,14 +76,14 @@ export class HttpProductService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
-    return this.httpClient.put(`${baseUrl}/${id}/.json`, product, {"headers": headers})
+    return this.httpClient.put(`${baseUrl}/${id}/.json`, product, {headers: headers})
   }
 
   delete = (id: string): Observable<any> => {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
-    return this.httpClient.delete(`${baseUrl}/${id}/.json`, {"headers": headers});
+    return this.httpClient.delete(`${baseUrl}/${id}/.json`, {headers: headers});
   }
 
 
