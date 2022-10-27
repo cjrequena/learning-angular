@@ -15,7 +15,7 @@
           [ngClass]="{ 'is-invalid': (userForm.submitted && _name.invalid) || (_name.invalid && _name.touched) }"
           required>
         <div class="invalid-feedback" *ngIf="_name.invalid" >
-          <div *ngIf="_name.errors['required']">Email is required</div>
+          <div *ngIf="_name.errors['required']">Name is required</div>
         </div>
       </div>
 
